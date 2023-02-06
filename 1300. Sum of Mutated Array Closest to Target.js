@@ -39,4 +39,20 @@ const cal = (v) => {
   return sum;
 };
 
+// Without binary search approach
+// var findBestValue = function(arr, target) {
+//     arr.sort((a, b) => a - b);
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         const lengthOfNumsToRight = arr.length - i;
+//         const currentNum = arr[i];
+//         if (sum + (currentNum * lengthOfNumsToRight) > target) {
+//             return Math.ceil((target - sum) / lengthOfNumsToRight - 0.5);
+//         }
+//         sum += currentNum;
+//     }
+
+//     return arr[arr.length - 1];
+// };
+
 // @lc code=end
