@@ -10,19 +10,17 @@
  * @param {number} n
  * @return {number[]}
  */
-var sumZero = function (n) {
-  if (n === 1) return [0];
-
+var sumZero = function(n) {
   const result = [];
-
-  for (let i = 0; i < n; i += 1) {
-    if (i !== n - 1) {
-      result.push(i);
-    } else {
-      result.push(-result.reduce((a, b) => a + b, 0));
-    }
+  const s = n/2;
+  for(let i=0;i<s;i++) {
+      result[i]=-(i+1);
+      result[n-1-i]=i+1;
   }
-
+  const ss = ~~s;
+  if(ss!=s){
+      result[ss]=0;
+  }
   return result;
 };
 
