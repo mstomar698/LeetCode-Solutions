@@ -10,14 +10,13 @@
  * @param {number} num
  * @return {number}
  */
-var numberOfSteps = function (num) {
-  if ((num & (num - 1)) === 0) {
-    return Math.log2(num) + 1;
+let numberOfSteps = function (num) {
+  let count = 0;
+  while (num > 0) {
+    num % 2 === 0 ? (num = num / 2) : num--;
+    count++;
   }
-  if (num % 2 === 0) {
-    return 1 + numberOfSteps(num / 2);
-  }
-  return 1 + numberOfSteps(num - 1);
+  return count;
 };
 
 // @lc code=end
